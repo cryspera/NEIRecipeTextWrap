@@ -43,7 +43,7 @@
 
 ## 安装
 
-把 `NEI-Recipe-Text-Wrap-<version>.jar` 放入 `.minecraft/mods/` 即可，无配置文件、无依赖声明。
+Release 页下载后放入 `.minecraft/mods/` 即可，无配置文件、无依赖声明。
 
 启动后可在 `logs/fml-client-latest.log` 中确认是否生效：
 
