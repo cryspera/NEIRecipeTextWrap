@@ -1,0 +1,8 @@
+# 关闭空白 issue：没有版本、日志、复现步骤的反馈基本无法排查。
+# 如果以后想放开，把下面这行改成 true。
+blank_issues_enabled: false
+
+contact_links:
+  - name: 安装步骤、环境要求与已知限制
+    url: https://github.com/cryspera/NEIRecipeTextWrap#readme
+    about: 提 issue 前先确认问题不在「已知限制」里，能省一轮来回

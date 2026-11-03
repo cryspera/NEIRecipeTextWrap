@@ -1,0 +1,92 @@
+name: Bug 报告
+description: 配方面板排版异常、文字重叠、来源行越界，或删除本 mod 后消失的异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **贴日志的正确姿势**：打开 <https://mclo.gs>，把 `logs/fml-client-latest.log` 拖进页面，
+        上传后复制得到的短链接，填到下面「日志链接」一栏。
+
+        请不要直接把整个日志粘进来——完整日志通常有好几 MB，贴不下，也基本看不清。
+
+  - type: dropdown
+    id: mod-version
+    attributes:
+      label: mod 版本
+      description: 见 `mods/` 里的 jar 文件名，或游戏主菜单 → Mods 列表
+      options:
+        - 1.1.1
+        - 更早版本（1.1.0 及以前）
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gtnh-version
+    attributes:
+      label: GTNH 版本
+      options:
+        - 2.9.0 正式版
+        - 2.9.0 快照 / 测试版
+        - 2.8.x 或更早
+        - 非 GTNH 的整合包
+    validations:
+      required: true
+
+  - type: dropdown
+    id: java-version
+    attributes:
+      label: Java 版本
+      options:
+        - "25"
+        - "21"
+        - "17"
+        - 其它
+    validations:
+      required: true
+
+  - type: input
+    id: log-link
+    attributes:
+      label: 日志链接
+      description: 把 `logs/fml-client-latest.log` 拖到 https://mclo.gs ，粘贴返回的链接。若确实无法上传（内网、离线等），此栏填「见下方摘录」，并在下面粘贴 ERROR 段落。
+      placeholder: https://mclo.gs/xxxxxxxx
+    validations:
+      required: true
+
+  - type: textarea
+    id: snippet
+    attributes:
+      label: 关键片段（可选）
+      description: 有崩溃或异常时，粘贴 `Exception` / `ERROR` 及其上下 10~20 行
+      placeholder: "java.lang.NoSuchMethodError: net.minecraft.client.gui.FontRenderer.func_78256_a(...)"
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 现象与复现
+      description: 哪个配方表、做了什么、期望看到什么、实际看到什么
+      placeholder: |
+        配方表：例如 晶胞铸造器 / 梦魔工作台配方转换
+        操作：打开 NEI，搜索某物品，点击配方
+        期望：来源行在面板宽度内折行
+        实际：文字压住最下面一行物品
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 是干净环境（除 GTNH 自带与必要附属外，没有额外加 mod）
+          required: true
+        - label: 已看过 README 的「已知限制」，问题不在其中
+          required: true
+        - label: 删掉本 mod 的 jar 后问题确实消失（能定位到本 mod）
+          required: false

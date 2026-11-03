@@ -1,0 +1,30 @@
+name: 功能建议
+description: 希望新增或改变的排版行为（不涉及玩法改动）
+title: "[建议] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: 想要的效果
+      description: 说清期望看到的样子，越具体越好
+      placeholder: 例如：多行来源名之间加一点行距，现在两行贴得太近
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 为什么
+      description: 现在哪里不顺手，或者哪个配方表特别明显
+      placeholder: 例如：TST 的配方表来源名普遍超长，折行后行距过密，辨识度低
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 影响面确认
+      options:
+        - label: 我了解本项目只调整 GT 配方表内的文字排版，不改动玩法、配方或界面结构
+          required: true
